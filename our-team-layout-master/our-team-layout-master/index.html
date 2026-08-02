@@ -1,80 +1,278 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link
-      rel="icon"
-      href="resources/favicon.ico"
-      type="image/x-icon"
-      sizes="96x96"
-    />
+		<link
+			rel="icon"
+			href="resources/favicon.ico"
+			type="image/x-icon"
+			sizes="96x96"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+			rel="stylesheet"
+		/>
 
-    <title>Meet the Team Section | devChallenges.io</title>
+		<title>Meet the Team Section | devChallenges.io</title>
 
-    <!--You are welcome to delete these styles or modify them in your own stylesheet -->
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+		<!--You are welcome to delete these styles or modify them in your own stylesheet -->
+		<style>
+			* {
+				--white-primary: #fffefe;
+				--white-secondary: #f3f4f6;
+				--black-secondary: #394150;
+				--black-primary: #000000;
+				--blue-primary: #263fa9;
+				--bg-4: #f8d8b0;
+				--bg-5: #86e7d4;
+				--bg-3: #9dc4f8;
+				--bg-1: #c1b6f8;
+				--bg-2: #edacd2;
 
-      body {
-        height: 100vh;
-      }
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				font-family: 'Outfit', sans-serif;
+			}
+			html {
+				height: 100vh;
+			}
 
-      .author-info {
-        font-size: 14px;
-        text-align: center;
-        margin-top: 16px;
-        color: rgb(55, 65, 81);
-      }
+			body {
+				display: flex;
+				justify-content: safe center;
+				align-items: safe center;
+				height: 100%;
+				padding: 1rem 2rem;
+			}
 
-      .author-info a {
-        text-decoration: none;
-      }
-    </style>
-  </head>
-  <body>
-    <!-- 
+			.card {
+				display: grid;
+				grid-auto-rows: 288px;
+				width: fit-content;
+				height: fit-content;
 
-    Our team
-    
-    Meet the brain
-    
-    We are proud to have them as part of our community and look forward to continuing to push the boundaries of what's possible in the world of digital art.
-    
-    Liam Novak
-    
-    Software Engineer
-    
-    Sophia Moretti
-    
-    Business Development Manager
-    
-    See all members
-    
-    Ethan Rossi
-    
-    Business Development Manager
-    
-    Isabella Ricci
-    
-    UX Designer
-    
-    Noah Conti
-    
-    Content Creator
+				overflow: hidden;
+				border-radius: 1rem;
 
-     -->
+				background-color: var(--white-secondary);
+				background-image: url(./resources/Background_decor@2x.png);
+				background-repeat: no-repeat;
+			}
+			.card-header > * {
+				margin-bottom: 1rem;
+			}
+			.card-header-tag {
+				color: var(--blue-primary);
+			}
+			.card-header-title {
+				font-size: 2.5rem;
+				font-weight: 500;
+			}
+			.card-header-desc {
+				font-weight: 400;
+				color: var(--black-secondary);
+				max-width: 30rem;
+			}
+			.card-footer {
+				display: grid;
+				align-content: end;
 
-    <div class="author-info">
-      Coded by <a href="#">Your Name Here</a> | Challenge by
-      <a href="https://www.devchallenges.io?ref=challenge" target="_blank"
-        >devChallenges.io</a
-      >.
-    </div>
-  </body>
+				font-weight: 500;
+				color: var(--black-secondary);
+				img {
+					margin-bottom: -4px;
+				}
+			}
+
+			.member-liam {
+				background-color: var(--bg-1);
+			}
+			.member-sophia {
+				background-color: var(--bg-2);
+			}
+			.member-ethan {
+				background-color: var(--bg-3);
+			}
+			.member-isabella {
+				background-color: var(--bg-4);
+			}
+			.member-noah {
+				background-color: var(--bg-5);
+			}
+
+			.card-header,
+			.card-footer {
+				padding: 2rem;
+			}
+
+			.card-member {
+				display: grid;
+
+				grid-template-columns: 1fr;
+				grid-template-rows: 1fr;
+
+				img {
+					width: 100%;
+					height: auto;
+					grid-row: 1 / 2;
+					grid-column: 1 / 2;
+				}
+				.card-member-info {
+					background: linear-gradient(
+						180deg,
+						rgba(217, 217, 217, 0) 0%,
+						rgba(0, 0, 0, 0.8) 100%
+					);
+					color: var(--white-primary);
+					padding: 2rem 1rem;
+					align-self: end;
+					grid-row: 1 / 2;
+					grid-column: 1 / 2;
+				}
+			}
+			.card-member-name {
+				font-size: 1.25rem;
+				font-weight: 600;
+				margin-bottom: 0.25rem;
+			}
+			.card-member-job {
+				font-weight: 400;
+			}
+			.card {
+				grid-template-columns: repeat(4, 284px);
+			}
+			.card-header {
+				grid-column: 1 / 3;
+			}
+
+			@media (max-width: 1279px) {
+				.card {
+					grid-template-columns: repeat(3, 284px);
+				}
+				.card-header {
+					grid-column: 1 / 4;
+				}
+				.card-footer {
+					grid-row: 3 / 4;
+					grid-column: 1 / 2;
+				}
+			}
+			@media (max-width: 1023px) {
+				.card {
+					grid-template-columns: repeat(2, 284px);
+				}
+				.card-header {
+					grid-column: 1 / 3;
+				}
+				.card-footer {
+					grid-row: 4 / 5;
+					grid-column: 1 / 2;
+				}
+			}
+			@media (max-width: 639px) {
+				.card {
+					grid-template-columns: repeat(1, 1fr);
+					grid-auto-rows: 1fr;
+				}
+				.card-header {
+					grid-column: 1 / 2;
+				}
+				.card-footer {
+					grid-row: 7 / 8;
+					grid-column: 1 / 2;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="card">
+			<div class="card-header">
+				<div class="card-header-tag">Our team</div>
+				<h2 class="card-header-title">Meet the brain</h2>
+				<p class="card-header-desc">
+					We are proud to have them as part of our community and look
+					forward to continuing to push the boundaries of what's
+					possible in the world of digital art.
+				</p>
+			</div>
+			<div class="card-member member-liam">
+				<img
+					src="./resources/person_1.png"
+					height="284"
+					width="288"
+					alt=""
+				/>
+				<div class="card-member-info">
+					<div class="card-member-name">Liam Novak</div>
+					<div class="card-member-job">Software Engineer</div>
+				</div>
+			</div>
+			<div class="card-member member-sophia">
+				<img
+					height="284"
+					width="288"
+					src="./resources/person_2.png"
+					alt="person_2"
+				/>
+				<div class="card-member-info">
+					<div class="card-member-name">Sophia Moretti</div>
+					<div class="card-member-job">
+						Business Development Manager
+					</div>
+				</div>
+			</div>
+			<div class="card-footer">
+				<div>
+					See all members
+					<img
+						src="./resources/arrow up right.svg"
+						alt="arrow-up-right"
+					/>
+				</div>
+			</div>
+			<div class="card-member member-ethan">
+				<img
+					height="284"
+					width="288"
+					src="./resources/person_3.png"
+					alt="person_3"
+				/>
+				<div class="card-member-info">
+					<div class="card-member-name">Ethan Rossi</div>
+					<div class="card-member-job">
+						Business Development Manager
+					</div>
+				</div>
+			</div>
+			<div class="card-member member-isabella">
+				<img
+					height="284"
+					width="288"
+					src="./resources/person_4.png"
+					alt="person_4"
+				/>
+				<div class="card-member-info">
+					<div class="card-member-name">Isabella Ricci</div>
+					<div class="card-member-job">UX Designer</div>
+				</div>
+			</div>
+			<div class="card-member member-noah">
+				<img
+					height="284"
+					width="288"
+					src="./resources/person_5.png"
+					alt="person_5"
+				/>
+				<div class="card-member-info">
+					<div class="card-member-name">Noah Conti</div>
+					<div class="card-member-job">Content Creator</div>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>
