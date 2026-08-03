@@ -15,17 +15,43 @@
 			type="image/x-icon"
 			sizes="96x96"
 		/>
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
-			rel="stylesheet"
-		/>
+
+		<link rel="preload" href="./resources/person_1@2x.png" as="image" />
+		<link rel="preload" href="./resources/person_2@2x.png" as="image" />
+		<link rel="preload" href="./resources/person_3@2x.png" as="image" />
+		<link rel="preload" href="./resources/person_4@2x.png" as="image" />
+		<link rel="preload" href="./resources/person_5@2x.png" as="image" />
 
 		<title>Meet the Team Section | devChallenges.io</title>
 
 		<!--You are welcome to delete these styles or modify them in your own stylesheet -->
 		<style>
+			/* latin-ext */
+			@font-face {
+				font-family: 'Outfit';
+				font-style: normal;
+				font-weight: 100 900;
+				font-display: swap;
+				src: url(./resources/font/latin-ext.woff2) format('woff2');
+				unicode-range:
+					U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7,
+					U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF,
+					U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0,
+					U+2113, U+2C60-2C7F, U+A720-A7FF;
+			}
+			/* latin */
+			@font-face {
+				font-family: 'Outfit';
+				font-style: normal;
+				font-weight: 100 900;
+				font-display: swap;
+				src: url(./resources/font/latin.woff2) format('woff2');
+				unicode-range:
+					U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+					U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC,
+					U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+			}
+
 			* {
 				--white-primary: #fffefe;
 				--white-secondary: #f3f4f6;
@@ -48,10 +74,12 @@
 			}
 
 			body {
+				position: relative;
 				display: flex;
 				justify-content: safe center;
+				align-items: safe center;
 				height: 100%;
-				padding: 1rem 2rem;
+				padding: 1rem 4rem;
 			}
 
 			.card {
@@ -68,14 +96,14 @@
 				background-repeat: no-repeat;
 			}
 			.card-header > * {
-				margin-bottom: 1rem;
+				margin-bottom: 0.75rem;
 			}
 			.card-header-tag {
 				color: var(--blue-primary);
 			}
 			.card-header-title {
 				font-size: 2.5rem;
-				font-weight: 500;
+				font-weight: 400;
 			}
 			.card-header-desc {
 				font-weight: 400;
@@ -84,9 +112,10 @@
 			}
 			.card-footer {
 				display: grid;
-				align-content: end;
+				align-content: safe end;
+				font-size: 1rem;
 
-				font-weight: 500;
+				font-weight: 400;
 				color: var(--black-secondary);
 				img {
 					margin-bottom: -4px;
@@ -133,7 +162,7 @@
 						rgba(0, 0, 0, 0.8) 100%
 					);
 					color: var(--white-primary);
-					padding: 2rem 1rem;
+					padding: 1.25rem 1.5rem;
 					align-self: end;
 					grid-row: 1 / 2;
 					grid-column: 1 / 2;
@@ -141,10 +170,12 @@
 			}
 			.card-member-name {
 				font-size: 1.25rem;
-				font-weight: 600;
+				font-weight: 400;
+
 				margin-bottom: 0.25rem;
 			}
 			.card-member-job {
+				font-size: 0.925rem;
 				font-weight: 400;
 			}
 			.card {
@@ -191,10 +222,20 @@
 					grid-column: 1 / 2;
 				}
 			}
+			/* .example {
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 5;
+				background: url(./design/Desktop_1350px.jpg) no-repeat;
+				width: 1350px;
+				height: 760px;
+				opacity: 0;
+			} */
 		</style>
 	</head>
 	<body>
-		<main class="card">
+		<main style="z-index: 2" class="card">
 			<div class="card-header">
 				<div class="card-header-tag">Our team</div>
 				<h2 class="card-header-title">Meet the brain</h2>
@@ -206,7 +247,7 @@
 			</div>
 			<div class="card-member member-liam">
 				<img
-					src="./resources/person_1.png"
+					src="./resources/person_1@2x.png"
 					height="284"
 					width="288"
 					alt=""
@@ -220,7 +261,7 @@
 				<img
 					height="284"
 					width="288"
-					src="./resources/person_2.png"
+					src="./resources/person_2@2x.png"
 					alt="person_2"
 				/>
 				<div class="card-member-info">
@@ -245,7 +286,7 @@
 				<img
 					height="284"
 					width="288"
-					src="./resources/person_3.png"
+					src="./resources/person_3@2x.png"
 					alt="person_3"
 				/>
 				<div class="card-member-info">
@@ -259,7 +300,7 @@
 				<img
 					height="284"
 					width="288"
-					src="./resources/person_4.png"
+					src="./resources/person_4@2x.png"
 					alt="person_4"
 				/>
 				<div class="card-member-info">
@@ -271,7 +312,7 @@
 				<img
 					height="284"
 					width="288"
-					src="./resources/person_5.png"
+					src="./resources/person_5@2x.png"
 					alt="person_5"
 				/>
 				<div class="card-member-info">
@@ -280,5 +321,6 @@
 				</div>
 			</div>
 		</main>
+		<!-- <div class="example"></div> -->
 	</body>
 </html>
